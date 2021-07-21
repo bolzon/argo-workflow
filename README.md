@@ -2,6 +2,7 @@
 
 This POC intends to be an initial point of how to properly configure Argo Workflow to run in your local machine or wherever your cluster is.
 
+
 ## Install and configure
 
 Have installed [docker](https://www.docker.com/), [k3s](https://k3s.io/) and [k3d](https://k3d.io/).
@@ -40,10 +41,20 @@ $ NAMESPACE=poc-argo
 $ curl https://raw.githubusercontent.com/argoproj/argo-workflows/stable/manifests/install.yaml | sed "s/namespace: argo/namespace: $NAMESPACE/g" | kubectl apply -n poc-argo -f -
 ```
 
-Configure port forwarding.
+As it's running locally, need to open the namespace port to be able to access the web portal.
 
 ```sh
 $ kubectl -n poc-argo port-forward deployment/argo-server 2746:2746
 ```
 
-Access
+After that, endpoint should be ready to access:
+
+**https://localhost:2746**
+
+## References
+
+- Take Argo CD for a spin with K3s and k3d  
+  https://thecloud.christmas/2020/13
+
+- Install Argo Workflows  
+  https://github.com/argoproj/argo-workflows/blob/master/docs/quick-start.md
