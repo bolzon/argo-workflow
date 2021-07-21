@@ -1,6 +1,6 @@
 # Argo Workflow (proof of concept)
 
-This POC intends to be an initial point of how to properly configure Argo Workflow to run in your local machine or wherever your cluster is.
+This POC intends to be an initial point of how to properly configure [Argo Workflow](https://argoproj.github.io/workflows) to run in your local machine or wherever your cluster is.
 
 
 ## Install and configure
